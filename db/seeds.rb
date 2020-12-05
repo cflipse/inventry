@@ -16,3 +16,11 @@ Location.find_or_create_by!(room: "Kitchen", name: "Refrigerator")
 Location.find_or_create_by!(room: "Utility", name: "Rolling Rack")
 Location.find_or_create_by!(room: "Utility", name: "Wall Rack")
 Location.find_or_create_by!(room: "Utility", name: "Cabinets")
+
+["Whole Chicken", "Chicken Breasts", "Chicken Tenders",
+  "Chuck Roast", "Top Round Roast", "Bottom Round Roast",
+  "Sirlion Steak", "New York Strip", "Ground Beef",
+  "Hamburger Patties", "Del Monaco", "Sirloin Tip Roast",
+  "Supreme Pizza", "Pepperoni Pizza", "Cheese Pizza"].each do |name|
+  Food.find_or_create_by!(name: name)
+end
