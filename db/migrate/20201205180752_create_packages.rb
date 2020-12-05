@@ -5,9 +5,9 @@ class CreatePackages < ActiveRecord::Migration[6.1]
       t.references :food, null: false, foreign_key: true
       t.date :expires_on
       t.date :added_on
-      t.string :quantity
+      t.citext :quantity
+      t.citext :store
       t.text :notes
-      t.string :store
 
       t.timestamps
     end
