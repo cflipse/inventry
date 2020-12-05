@@ -1,0 +1,10 @@
+<h2>Packages</h2>
+
+<% @packages.each do |package| %>
+
+  <article class='package'>
+    <%= package.food.name %> - <%= package.location.room %>
+  </article>
+
+
+<% end %>
