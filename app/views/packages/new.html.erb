@@ -1,0 +1,43 @@
+<h2>Add new packages</h2>
+
+
+<%= form_with model: @package do |form| %>
+
+  <div>
+    <%= form.label :location_id %>
+    <%= form.select :location_id,
+      options_from_collection_for_select(Location.all, :id, :to_s) %>
+  </div>
+
+  <div>
+    <%= form.label :food_id %>
+    <%= form.select :food_id, options_from_collection_for_select(Food.all, :id, :name) %>
+  </div>
+
+  <div>
+    <%= form.label :producer %>
+    <%= form.text_field :producer %>
+  </div>
+
+  <div>
+    <%= form.label :store %>
+    <%= form.text_field :store %>
+  </div>
+
+  <div>
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :notes %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div class='actions'>
+    <%= form.submit "Store package" %>
+    <%= link_to "Cancel", root_path, class: "btn" %>
+  </div>
+
+
+<% end %>
