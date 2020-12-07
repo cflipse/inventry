@@ -4,16 +4,14 @@ class PackagesController < ApplicationController
   end
 
   def new
-    @package = Package.new
-    if params[:package]
-      @package.attributes = package_params.except(:notes)
-    end
+    @package = Package.new(flash[:prefill_package])
   end
 
   def create
     @package = Package.new(package_params)
 
     if @package.save
+      flash[:prefill_package] = package_params.except(:notes)
       redirect_to new_package_path(package: package_params)
     else
       render :new
