@@ -157,6 +157,8 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.0.0)
     rexml (3.2.4)
+    rspec-collection_matchers (1.2.0)
+      rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.10.0)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.0)
@@ -253,6 +255,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.0.rc2)
+  rspec-collection_matchers
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
