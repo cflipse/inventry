@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.6.6"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 6.1.0.rc2"
+gem "rails", "~> 6.1.0"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 # Use Puma as the app server
@@ -50,7 +50,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :test do
   gem "rspec-rails"
   gem "rspec-collection_matchers"
-  gem "capybara"
+  gem "capybara", "~> 3.33"
   gem "selenium-webdriver"
 end
 
