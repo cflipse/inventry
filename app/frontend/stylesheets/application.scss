@@ -11,6 +11,25 @@
   h3 { @apply text-lg; }
 }
 
+@layer components {
+  .btn {
+    @apply inline-block px-2 py-1 rounded;
+  }
+
+  .btn-teal {
+    @apply bg-teal-500 text-grey-100;
+  }
+
+  .btn-grey {
+    @apply bg-gray-300 text-black
+  }
+
+
+  .form-label {
+    @apply uppercase text-xs font-bold tracking-wide;
+  }
+}
+
 @tailwind components;
 
 @tailwind utilities;
