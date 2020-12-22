@@ -45,6 +45,8 @@ group :development do
   gem "guard-livereload", require: false
 
   gem "standard"
+
+  gem "foreman"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
