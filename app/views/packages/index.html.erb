@@ -2,4 +2,16 @@
   <h2>Packages</h2>
 </header>
 
-<%= render PackageComponent.with_collection(@packages) %>
+
+<% @packages.group_by(&:food).sort_by{|k,v| k.name }.each do |food, packages| %>
+  <article class='border-2 rounded-xl mb-8 '>
+    <header class='rounded-t-xl bg-grey-200 px-3 py-2'>
+      <span class='mr-2 font-semibold text-teal-700 text-xs'><%= packages.count %></span>
+      <%= food.name %>
+    </header>
+
+    <div class='px-3 py-2'>
+    </div>
+
+  </article>
+<% end %>
