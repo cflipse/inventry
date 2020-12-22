@@ -10,8 +10,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-gray-600 text-white font-serif">
-    <div class="container mx-auto">
+  <body class="text-gray-800 bg-gray-100 font-serif">
+
+    <header class='bg-teal-500 text-white py-2 px-6'>
+      <h1>Invent'ry</h1>
+    </header>
+
+    <div class="px-6 mt-2">
       <%= yield %>
     </div>
   </body>
