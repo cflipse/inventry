@@ -41,6 +41,9 @@ group :development do
   gem "rack-mini-profiler", "~> 2.0", require: false
   gem "listen", "~> 3.3"
 
+  gem "rack-livereload"
+  gem "guard-livereload", require: false
+
   gem "standard"
 end
 
