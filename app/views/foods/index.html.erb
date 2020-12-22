@@ -1,0 +1,22 @@
+<header class='mb-2 border-b-2 border-teal-300'>
+  <h2>In Stock</h2>
+</header>
+
+
+<main class="grid grid-cols-2">
+
+  <div>
+
+    <% @foods.each do |food| %>
+      <article class='border-2 rounded-xl mb-8'>
+        <%= food.name %>
+
+        <span class="rounded-full text-teal-800 bg-teal-200 px-2 inline-block text-xs">
+          <%= @counts[food.id] %>
+        </span>
+
+      </article>
+    <% end %>
+
+  </div>
+</main>
