@@ -1,10 +1,5 @@
-<h2>Packages</h2>
+<header class='mb-2 border-b-2 border-teal-300'>
+  <h2>Packages</h2>
+</header>
 
-<% @packages.each do |package| %>
-
-  <article class='package'>
-    <%= package.food.name %> - <%= package.location.room %>
-  </article>
-
-
-<% end %>
+<%= render PackageComponent.with_collection(@packages) %>

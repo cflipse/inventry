@@ -1,0 +1,24 @@
+<article class='mb-4 border-2 rounded-xl border-grey-200'>
+
+  <header class='bg-grey-200 px-3 py-2 rounded-t-xl items-start'>
+    <span class='font-bold'><%= @package.food.name %></span>
+    <span class='text-xs font-em'><%= @package.producer %></span>
+  </header>
+
+  <p class='px-3' >
+    <span class=''><%= @package.quantity %></span>
+    <span class=''><%= @package.store %></span>
+
+    <span class=''><%= @package.location.room %></span>
+    <span class=''><%= @package.location.name %></span>
+
+
+    <div class=''>
+      <%= @package.notes %>
+    </div>
+  </p>
+
+  <footer class='px-3 text-sm' >
+    <%= @package.added_on %>
+  </footer>
+</article>
