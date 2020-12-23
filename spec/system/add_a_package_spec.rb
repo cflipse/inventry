@@ -9,7 +9,7 @@ RSpec.describe "Adding a new package", type: :system do
     visit "/inbox"
 
     select "Steak", from: "Food"
-    select "Utility Freezer", from: "Location"
+    select "Freezer", from: "Location"
 
     fill_in "Producer", with: "Honeybrook Farms"
     fill_in "Store", with: "Reston Farm Market"
