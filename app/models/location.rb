@@ -9,4 +9,14 @@ class Location < ApplicationRecord
   def self.rooms
     distinct.pluck(:room)
   end
+
+  def to_param
+    [room, name].join("-")
+  end
+
+  def self.lookup(param)
+    room, name = param.to_s.split("-")
+
+    where(room: room, name: name).or(where(id: param)).first!
+  end
 end
