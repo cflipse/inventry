@@ -5,4 +5,8 @@ class Location < ApplicationRecord
   def to_s
     [room, name].join(" ")
   end
+
+  def self.rooms
+    distinct.pluck(:room)
+  end
 end
