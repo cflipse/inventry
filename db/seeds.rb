@@ -17,15 +17,21 @@ Location.find_or_create_by!(room: "Utility", name: "Rolling Rack")
 Location.find_or_create_by!(room: "Utility", name: "Wall Rack")
 Location.find_or_create_by!(room: "Utility", name: "Cabinets")
 
-["Whole Chicken", "Chicken Breasts", "Chicken Tenders",
-  "Chuck Roast", "Top Round Roast", "Bottom Round Roast",
-  "Sirlion Steak", "New York Strip", "Ground Beef",
-  "Hamburger Patties", "Del Monaco", "Sirloin Tip Roast",
-  "Supreme Pizza", "Pepperoni Pizza", "Cheese Pizza"].each do |name|
-  Food.find_or_create_by!(name: name)
+Package.destroy_all
+
+["Whole Chicken", "Chicken Breasts", "Chicken Tenders"].each do |name|
+  Food.find_or_create_by!(name: name, category: "Chicken")
 end
 
-Package.destroy_all
+["Chuck Roast", "Top Round Roast", "Bottom Round Roast",
+  "Sirlion Steak", "New York Strip", "Ground Beef",
+  "Hamburger Patties", "Del Monaco", "Sirloin Tip Roast"].each do |name|
+  Food.find_or_create_by!(name: name, category: "Beef")
+end
+
+["Supreme Pizza", "Pepperoni Pizza", "Cheese Pizza"].each do |name|
+  Food.find_or_create_by!(name: name, category: "Pizza")
+end
 
 [
   [uf, "Whole Chicken", "Honeybrook Farms", store: "Reston Farmer's Market", quantity: "3 lbs", added_on: 3.months.ago],

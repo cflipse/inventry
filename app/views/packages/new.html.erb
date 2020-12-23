@@ -7,14 +7,19 @@
 
   <div class='mt-4'>
     <%= form.label :location_id, class: 'form-label' %>
-    <%= form.collection_select :location_id, Location.all, :id, :to_s, { prompt: true },
-      { class: 'w-full rounded' } %>
+
+    <%= form.select :location_id,
+      grouped_options_for_select(grouped_room_options, form.object.location_id),
+      { prompt: true }, { class: 'w-full rounded' } %>
   </div>
 
   <div class='mt-4'>
     <%= form.label :food_id, class: 'form-label' %>
-    <%= form.collection_select :food_id, Food.all, :id, :name, { prompt: true },
-      { class: 'w-full rounded' } %>
+
+
+    <%= form.select :food_id,
+      grouped_options_for_select(grouped_food_options, form.object.food_id),
+      { prompt: true }, { class: 'w-full rounded' } %>
   </div>
 
   <div class='mt-4'>

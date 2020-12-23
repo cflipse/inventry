@@ -5,9 +5,9 @@ RSpec.describe Package, type: :model do
     it "tallies up food totals" do
       location = Location.create(name: "Freezer", room: "Kitchen")
 
-      ground = Food.create!(name: "Ground Beef")
-      chicken = Food.create!(name: "Chicken Breast")
-      Food.create!(name: "Beef Sirloin")
+      ground = Food.create!(name: "Ground Beef", category: "Beef")
+      chicken = Food.create!(name: "Chicken Breast", category: "Chicken")
+      Food.create!(name: "Beef Sirloin", category: "Beef")
 
       3.times { Package.create!(food: ground, location: location) }
       2.times { Package.create!(food: chicken, location: location) }

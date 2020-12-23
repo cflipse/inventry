@@ -2,14 +2,14 @@ require "rails_helper"
 
 RSpec.describe "Adding a new package", type: :system do
   it "adds to an existing food" do
-    steak = Food.create!(name: "Steak")
-    pork = Food.create!(name: "Pork Chop")
+    steak = Food.create!(name: "Steak", category: "Beef")
+    pork = Food.create!(name: "Pork Chop", category: "Pork")
     Location.create!(name: "Freezer", room: "Utility")
 
     visit "/inbox"
 
     select "Steak", from: "Food"
-    select "Utility Freezer", from: "Location"
+    select "Freezer", from: "Location"
 
     fill_in "Producer", with: "Honeybrook Farms"
     fill_in "Store", with: "Reston Farm Market"
