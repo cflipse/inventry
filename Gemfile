@@ -46,8 +46,6 @@ group :development do
   gem "rack-livereload"
   gem "guard-livereload", require: false
 
-  gem "standard"
-
   gem "foreman"
 end
 
