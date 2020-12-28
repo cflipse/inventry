@@ -7,6 +7,7 @@ class CreateLocations < ActiveRecord::Migration[6.1]
       t.citext :room, null: false, index: true
 
       t.timestamps
+      t.index [:name, :room], unique: true
     end
   end
 end
