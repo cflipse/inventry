@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_170724) do
     t.citext "room", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name", "room"], name: "index_locations_on_name_and_room", unique: true
     t.index ["room"], name: "index_locations_on_room"
   end
 
