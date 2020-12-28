@@ -46,6 +46,9 @@ group :development do
   gem "rack-livereload"
   gem "guard-livereload", require: false
 
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec", require: false
+
   gem "foreman"
 end
 
