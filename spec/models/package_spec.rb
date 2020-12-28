@@ -9,8 +9,8 @@ RSpec.describe Package, type: :model do
       chicken = Food.create!(name: "Chicken Breast", category: "Chicken")
       Food.create!(name: "Beef Sirloin", category: "Beef")
 
-      3.times { Package.create!(food: ground, location: location) }
-      2.times { Package.create!(food: chicken, location: location) }
+      3.times { described_class.create!(food: ground, location: location) }
+      2.times { described_class.create!(food: chicken, location: location) }
 
       expect(described_class.food_counts).to eq(
         ground.id => 3,
