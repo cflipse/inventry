@@ -12,8 +12,15 @@
 
   <body class="text-gray-800 bg-gray-100 font-sans">
 
-    <header class='bg-teal-500 text-white py-2 px-6'>
+    <header class='bg-teal-500 text-white pt-2 px-6'>
       <h1>Invent'ry</h1>
+      <nav class='flex justify-start ml-2 pt-1'>
+      <% ["All"].concat(Location.rooms).each do |room| %>
+        <span class='flex-initial px-3 <%= 'bg-white text-teal-700' if room.casecmp?(params[:id])%>'>
+          <%= link_to_unless room.casecmp?(params[:id]), room, room_path(room) %>
+        </span>
+      <% end %>
+      </nav>
     </header>
 
     <div class="px-6 mt-2">
