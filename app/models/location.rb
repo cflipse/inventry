@@ -1,8 +1,16 @@
 class Location < ApplicationRecord
+  has_many :packages, dependent: :nullify
+
+  enum storage: {
+    freezer: "freezer",
+    refrigerator: "refrigerator",
+    pantry: "pantry",
+  }
+
   validates :room, presence: true
   validates :name, presence: true, uniqueness: { scope: :room, case_sensitive: false }
 
-  has_many :packages, dependent: :nullify
+  validates :storage, inclusion: { in: storages.keys }
 
   def to_s
     [room, name].join(" ")

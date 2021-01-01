@@ -27,6 +27,8 @@ gem "jbuilder", "~> 2.7"
 
 gem "view_component", require: "view_component/engine"
 
+gem "activerecord-postgres_enum"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
