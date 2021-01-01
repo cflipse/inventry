@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-uf = Location.find_or_create_by!(room: "Utility", name: "Freezer")
-kf = Location.find_or_create_by!(room: "Kitchen", name: "Freezer")
+uf = Location.find_or_create_by!(room: "Utility", name: "Freezer", storage: "freezer")
+kf = Location.find_or_create_by!(room: "Kitchen", name: "Freezer", storage: "freezer")
 
-Location.find_or_create_by!(room: "Kitchen", name: "Right Pantry")
-Location.find_or_create_by!(room: "Kitchen", name: "Left Pantry")
-Location.find_or_create_by!(room: "Kitchen", name: "Refrigerator")
+Location.find_or_create_by!(room: "Kitchen", name: "Right Pantry", storage: "pantry")
+Location.find_or_create_by!(room: "Kitchen", name: "Left Pantry", storage: "pantry")
+Location.find_or_create_by!(room: "Kitchen", name: "Refrigerator", storage: "refrigerator")
 
-Location.find_or_create_by!(room: "Utility", name: "Rolling Rack")
-Location.find_or_create_by!(room: "Utility", name: "Wall Rack")
-Location.find_or_create_by!(room: "Utility", name: "Cabinets")
+Location.find_or_create_by!(room: "Utility", name: "Rolling Rack", storage: "pantry")
+Location.find_or_create_by!(room: "Utility", name: "Wall Rack", storage: "pantry")
+Location.find_or_create_by!(room: "Utility", name: "Cabinets", storage: "pantry")
 
 Package.destroy_all
 
