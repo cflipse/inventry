@@ -1,24 +1,13 @@
 <main class="grid grid-cols-2">
   <div>
-
     <% @locations.each do |location| %>
       <article class='border-2 rounded-xl mb-8 font-serif'>
         <header class='rounded-t-xl bg-grey-200 px-3 py-2'>
           <%= location.name %>
         </header>
 
-        <ul class='px-3 py-2'>
-          <% location.packages.group_by{ |p| p.food.category }.sort_by{|k,v| k }.each do |food, packages| %>
-
-            <li>
-              <%= food %>
-              <span class='mr-2 font-semibold text-xs text-teal-700 bg-teal-200 rounded-full px-1 py-1 inline-block align-baseline'>
-                <%= packages.count %>
-              </span>
-            </li>
-          <% end %>
-        </ul>
+        <%= render CategoryCountComponent.new packages: location.packages %>
       </article>
     <% end %>
   </div>
-  </mail>
+</main>
