@@ -40,6 +40,11 @@ Style/StringLiterals:
 Style/SymbolArray:
   Enabled: false
 
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
 Metrics/BlockLength:
   Exclude:
     - Guardfile
